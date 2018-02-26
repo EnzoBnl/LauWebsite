@@ -1,0 +1,82 @@
+<html>
+   
+   <head>
+      <title>Animation Conductive Edges Laury Martins Lopes</title>
+      
+     
+      
+   </head>
+   
+   <body>
+      
+   </body>
+    <script type="text/javascript">
+         <!--
+			
+			
+			tabCentral=[]
+			tabCentralPos=[];
+			for(let i=0;i<5;i++){
+				tabCentralPos.push([240+i*140,205]);
+			}
+			for(let i=0;i<5;i++){
+				tabCentralPos.push([240+i*140,315]);
+			}
+			
+			for(let i=0;i<10;i++){
+				tabCentral.push(new Image());
+				tabCentral[i].src="lauCentral.png";
+				tabCentral[i].style.position="absolute";
+				tabCentral[i].style.left=tabCentralPos[i][0];
+				tabCentral[i].style.top=tabCentralPos[i][1];
+				document.body.append(tabCentral[i]);
+			}
+			tabCote=[]
+			tabCotePos=[];
+			for(let i=0;i<7;i++){
+				tabCotePos.push([20+i*150,20]);
+			}
+			for(let i=0;i<7;i++){
+				tabCotePos.push([20+i*150,400]);
+			}
+			for(let i=0;i<2;i++){
+				tabCotePos.push([-75,135+i*150]);
+			}
+			for(let i=0;i<2;i++){
+				tabCotePos.push([1017,135+i*150]);
+			}
+			for(let i=0;i<18;i++){
+				tabCote.push(new Image());
+				tabCote[i].src="lauFlecheCercle.png";
+				tabCote[i].style.position="absolute";
+				tabCote[i].style.left=tabCotePos[i][0];
+				tabCote[i].style.top=tabCotePos[i][1];
+				document.body.append(tabCote[i]);
+			}
+            var angle=0;
+			var fps=30;
+			var vitesseRotation=-200;
+			var pas=vitesseRotation/fps;
+			var interval=1000/fps
+            function rotate(){
+				angle=angle+pas;
+				for(let i=0;i<10;i++){
+					tabCentral[i].style.transform = "rotate("+angle+"deg)";
+
+				}
+				for(let i=0;i<18;i++){
+					tabCote[i].style.transform = "rotate("+angle+"deg)";
+
+				}
+            }
+			var lauBase=new Image();
+			lauBase.src="lauBase.png";
+			lauBase.style.position="absolute";
+			lauBase.style.top="0px";
+			lauBase.style.left="0px";
+			document.body.append(lauBase);
+            setInterval(rotate,interval);
+            
+         //-->
+      </script>
+</html>
